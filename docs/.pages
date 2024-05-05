@@ -1,0 +1,5 @@
+nav:
+    - XAMPP+Laravel: 
+        - Entorno XAMPP con Laravel : xampp-laravel.md
+    - MySQL:
+        - Base de datos MySQL con SQL workbench o PHPMyadmin (opcional): mysql.md
