@@ -8,21 +8,25 @@
       
       
       
+        <link rel="canonical" href="https://raul-profesor.github.io/dockerizacion/mongodb/">
       
       
-      <link rel="icon" href="/dockerizacion/assets/images/favicon.png">
+        <link rel="prev" href="../mysql/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
-        <title>Proyecto de dockerización para distintas prácticas de distintos módulos</title>
+        <title>Base de datos MongoDB con MongoDB Express - Proyecto de dockerización para distintas prácticas de distintos módulos</title>
       
     
     
-      <link rel="stylesheet" href="/dockerizacion/assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="/dockerizacion/assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -38,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="/dockerizacion/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/dockerizacion/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -80,6 +84,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#instrucciones-para-levantar-el-escenario" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="/dockerizacion/." title="Proyecto de dockerización para distintas prácticas de distintos módulos" class="md-header__button md-logo" aria-label="Proyecto de dockerización para distintas prácticas de distintos módulos" data-md-component="logo">
+    <a href=".." title="Proyecto de dockerización para distintas prácticas de distintos módulos" class="md-header__button md-logo" aria-label="Proyecto de dockerización para distintas prácticas de distintos módulos" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -111,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Base de datos MongoDB con MongoDB Express
             
           </span>
         </div>
@@ -206,7 +215,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/dockerizacion/." title="Proyecto de dockerización para distintas prácticas de distintos módulos" class="md-nav__button md-logo" aria-label="Proyecto de dockerización para distintas prácticas de distintos módulos" data-md-component="logo">
+    <a href=".." title="Proyecto de dockerización para distintas prácticas de distintos módulos" class="md-nav__button md-logo" aria-label="Proyecto de dockerización para distintas prácticas de distintos módulos" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -252,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dockerizacion/xampp-laravel/" class="md-nav__link">
+      <a href="../xampp-laravel/" class="md-nav__link">
         Entorno XAMPP con Laravel
       </a>
     </li>
@@ -301,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dockerizacion/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         Base de datos MySQL con SQL workbench o PHPMyadmin (opcional)
       </a>
     </li>
@@ -321,14 +330,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -337,7 +348,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           BD no relacionales - MongoDB
@@ -348,11 +359,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/dockerizacion/mongodb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Base de datos MongoDB con MongoDB Express
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Base de datos MongoDB con MongoDB Express
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instrucciones-para-levantar-el-escenario" class="md-nav__link">
+    Instrucciones para levantar el escenario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -399,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dockerizacion/tomcat.md" class="md-nav__link">
+      <a href="../tomcat.md" class="md-nav__link">
         Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
       </a>
     </li>
@@ -425,8 +473,64 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>Base de datos MongoDB con MongoDB Express</h1>
+
+<h2 id="instrucciones-para-levantar-el-escenario">Instrucciones para levantar el escenario</h2>
+<p>Este escenario pretende levantar dos contenedores:</p>
+<ol>
+<li>Base de datos NoSQL <strong>MongoDB</strong></li>
+<li>Interfaz de administración web de MongoDB, <strong>Mongo Express</strong></li>
+</ol>
+<p>El <code>docker-compose.yml</code>lucirá tal que así:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">mongo</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span><span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongoDB</span><span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"> </span><span class="c1"># (3)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USER}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASSWORD}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">mongo-express</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span><span class="w"> </span><span class="c1"># (4)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINUSERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USER}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINPASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASSWORD}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb://${USER}:${PASSWORD}@mongoDB:27017/</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<ol>
+<li>Imagen a partir de la cual se creará el contenedor. Podríamos indicarle una versión concreta de MongoDB si fuese necesario.</li>
+<li>Nombre que le damos a nuestro contenedor</li>
+<li>Como indica la <a href="https://docs.docker.com/config/containers/start-containers-automatically/">documentación</a> de Docker, reiniciará automática el contenedor si se para por alguna razón, no así si lo paramos nosotros a mano.</li>
+<li>Exponemos los puertos del contenedor al mundo para poder acceder a ellos. En este caso el puerto 8081 del contenedor se corresponderá con el puerto 8081 de nuestra máquina. De esta forma accederemos a la interfaz web.</li>
+</ol>
+<p>Donde las variables que van precedidas de un símbolo de dólar y entre llaves (<em>${  }</em>) son variables de entorno, que están definidas en el archivo <code>.env</code></p>
+<p>Para utilizar el escenario en este caso es muy sencillo. Basta con seguir la pauta de siempre:</p>
+<p><img alt="" src="../img/mongo2.png" /></p>
+<p>Tras descargar las imágenes y construir los contenedores, ya estamos en disposición absoluta de utilizarlos.</p>
+<p>Accedemos a Mongo Express :</p>
+<p><img alt="" src="../img/mongo3.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Atención</p>
+<p>Una vez más, yo estoy utilizando AWS. Si estamos levantando este escenario en nuestro propio equipo, habríamos de poner <code>http://localhost:8081</code>.</p>
+</div>
+<p>Y ya podremos interactuar con el servidor MongoDB:</p>
+<p><img alt="" src="../img/mongo4.png" /></p>
+
+
+  
+
+
+
+
+                
               </article>
             </div>
           
@@ -463,10 +567,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/dockerizacion/", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotate"], "search": "/dockerizacion/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="/dockerizacion/assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
