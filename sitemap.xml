@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://raul-profesor.github.io/dockerizacion/tomcat/</loc>
+         <lastmod>2024-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://raul-profesor.github.io/dockerizacion/xampp-laravel/</loc>
          <lastmod>2024-05-07</lastmod>
          <changefreq>daily</changefreq>

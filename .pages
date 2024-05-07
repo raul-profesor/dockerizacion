@@ -1,0 +1,9 @@
+nav:
+    - XAMPP+Laravel: 
+        - Entorno XAMPP con Laravel : xampp-laravel.md
+    - BD relacionales - MySQL:
+        - Base de datos MySQL con SQL workbench o PHPMyadmin (opcional): mysql.md
+    - BD no relacionales - MongoDB:
+        - Base de datos MongoDB con MongoDB Express: mongodb.md
+    - Tomcat para aplicaciones Java:
+        - Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java: tomcat.md

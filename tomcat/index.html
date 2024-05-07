@@ -8,20 +8,18 @@
       
       
       
-        <link rel="canonical" href="https://raul-profesor.github.io/dockerizacion/mongodb/">
+        <link rel="canonical" href="https://raul-profesor.github.io/dockerizacion/tomcat/">
       
       
-        <link rel="prev" href="../mysql/">
+        <link rel="prev" href="../mongodb/">
       
-      
-        <link rel="next" href="../tomcat/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Base de datos MongoDB con MongoDB Express - Proyecto de dockerización para distintas prácticas de distintos módulos</title>
+        <title>Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java - Proyecto de dockerización para distintas prácticas de distintos módulos</title>
       
     
     
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Base de datos MongoDB con MongoDB Express
+              Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
             
           </span>
         </div>
@@ -326,6 +324,55 @@
 
   
   
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          BD no relacionales - MongoDB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          BD no relacionales - MongoDB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        Base de datos MongoDB con MongoDB Express
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -335,19 +382,19 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          BD no relacionales - MongoDB
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Tomcat para aplicaciones Java
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          BD no relacionales - MongoDB
+          Tomcat para aplicaciones Java
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -365,12 +412,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Base de datos MongoDB con MongoDB Express
+          Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Base de datos MongoDB con MongoDB Express
+        Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
       </a>
       
         
@@ -408,55 +455,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          Tomcat para aplicaciones Java
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Tomcat para aplicaciones Java
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tomcat/" class="md-nav__link">
-        Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -472,53 +470,37 @@
                   
 
 
-  <h1>Base de datos MongoDB con MongoDB Express</h1>
+  <h1>Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java</h1>
 
 <h2 id="instrucciones-para-levantar-el-escenario">Instrucciones para levantar el escenario</h2>
-<p>Este escenario pretende levantar dos contenedores:</p>
-<ol>
-<li>Base de datos NoSQL <strong>MongoDB</strong></li>
-<li>Interfaz de administración web de MongoDB, <strong>Mongo Express</strong></li>
-</ol>
-<p>El <code>docker-compose.yml</code>lucirá tal que así:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">mongo</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span><span class="w"> </span><span class="c1"># (1)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongoDB</span><span class="w"> </span><span class="c1"># (2)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"> </span><span class="c1"># (3)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USER}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASSWORD}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">mongo-express</span><span class="p">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span><span class="w"> </span><span class="c1"># (4)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINUSERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USER}</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINPASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASSWORD}</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb://${USER}:${PASSWORD}@mongoDB:27017/</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<p>Este escenario es de los más sencillos. Hace uso de un servidor de aplicaciones Tomcat para ejecutar una aplicación Java, previamente compilada y empaquetada en un <strong>.war</strong></p>
+<p>Dependiendo de la versión de Java utilizada, se deberá utilziar una versión de Tomcat u otra. En este caso utilizaremos una versión un poco obsoleta ya que la aplicación de muestra está algo desfasada.</p>
+<p>En caso de desarrollos en Java 11 o superiores, podríamos utilizar ya a partir de la versión 10 de Tomcat. Algo más de detalle <a href="https://raul-profesor.github.io/Despliegue/P3.1-Tomcat/#por-que">aquí</a></p>
+<p>En cualquier caso, utilizaremos un único contenedor. Por este motivo nos basta con un <code>Dockerfile</code>y no necesitamos utilizar <code>docker compose</code>para tener un escenario multicontenedor.</p>
+<p>Sería tan simple como:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">tomcat:7.0</span><span class="w"> </span><span class="c"># (1)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">COPY</span><span class="w"> </span>./aplicacion/poc.war<span class="w"> </span>/usr/local/tomcat/webapps<span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
 </code></pre></div>
 <ol>
-<li>Imagen a partir de la cual se creará el contenedor. Podríamos indicarle una versión concreta de MongoDB si fuese necesario.</li>
-<li>Nombre que le damos a nuestro contenedor</li>
-<li>Como indica la <a href="https://docs.docker.com/config/containers/start-containers-automatically/">documentación</a> de Docker, reiniciará automática el contenedor si se para por alguna razón, no así si lo paramos nosotros a mano.</li>
-<li>Exponemos los puertos del contenedor al mundo para poder acceder a ellos. En este caso el puerto 8081 del contenedor se corresponderá con el puerto 8081 de nuestra máquina. De esta forma accederemos a la interfaz web.</li>
+<li>Imagen con la versión de Tomcat indicada que se utilizará para crear el contenedor</li>
+<li>Al construir el contenedor, copia el fichero <strong>poc.war</strong> al directorio destinado a servir las aplicaciones en un servidor Tomcat</li>
 </ol>
-<p>Donde las variables que van precedidas de un símbolo de dólar y entre llaves (<em>${  }</em>) son variables de entorno, que están definidas en el archivo <code>.env</code></p>
-<p>Para utilizar el escenario en este caso es muy sencillo. Basta con seguir la pauta de siempre:</p>
-<p><img alt="" src="../img/mongo2.png" /></p>
-<p>Tras descargar las imágenes y construir los contenedores, ya estamos en disposición absoluta de utilizarlos.</p>
-<p>Accedemos a Mongo Express :</p>
-<p><img alt="" src="../img/mongo3.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Atención</p>
-<p>Una vez más, yo estoy utilizando AWS. Si estamos levantando este escenario en nuestro propio equipo, habríamos de poner <code>http://localhost:8081</code>.</p>
-</div>
-<p>Y ya podremos interactuar con el servidor MongoDB:</p>
-<p><img alt="" src="../img/mongo4.png" /></p>
+<p>Para construir y correr el contenedor, en el terminal y situados en el directorio del proyecto (donde está el <em>Dockerfile</em>) basta con hacer:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>docker<span class="w"> </span>image<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>raul/tomcat_poc<span class="w"> </span>.<span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">$ </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>--publish<span class="w"> </span><span class="m">8081</span>:8080<span class="w"> </span>raul/tomcat_poc<span class="w"> </span><span class="c1"># (2)</span>
+</code></pre></div>
+<ol>
+<li>Construye la imagen del contenedor a partir del Dockerfile que se encuentra en el directorio actual (<code>.</code>) y como nombre ponle <code>raul/tomcat_poc</code></li>
+<li>Corre el contenedor mapeando el puerto 8080 de Tomcat en el contenedor, con el  puerto 8081 de la máquina donde esté corriendo el contenedors</li>
+</ol>
+<p>Una vez corriendo el contenedor, no nos queda más que acceder al servidor (localhost si es nuestra máquina, IP o nombre de dominio si es una remota):</p>
+<p><img alt="" src="../img/tomcat1.png" /></p>
+<p>Accedemos al puerto 8081 y al directorio <code>poc</code>que es como hemos llamado al .war de nuestra aplicación.</p>
+<p>Y corroboramos que todo funciona correctamente:</p>
+<p><img alt="" src="../img/tomcat2.png" /></p>
+<p><img alt="" src="../img/tomcat3.png" /></p>
 
 
   
