@@ -8,18 +8,18 @@
       
       
       
-        <link rel="canonical" href="https://raul-profesor.github.io/dockerizacion/xampp-laravel/">
+        <link rel="canonical" href="https://raul-profesor.github.io/dockerizacion/tomcat/">
       
       
+        <link rel="prev" href="../mongodb/">
       
-        <link rel="next" href="../mysql/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Entorno XAMPP con Laravel - Proyecto de dockerización para distintas prácticas de distintos módulos</title>
+        <title>Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java - Proyecto de dockerización para distintas prácticas de distintos módulos</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Entorno XAMPP con Laravel
+              Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
             
           </span>
         </div>
@@ -226,16 +226,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
       
       
       
@@ -244,7 +242,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           XAMPP+Laravel
@@ -255,48 +253,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Entorno XAMPP con Laravel
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xampp-laravel/" class="md-nav__link">
         Entorno XAMPP con Laravel
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#instrucciones-para-levantar-el-escenario" class="md-nav__link">
-    Instrucciones para levantar el escenario
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -412,14 +373,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
@@ -428,7 +391,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Tomcat para aplicaciones Java
@@ -439,11 +402,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../tomcat/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instrucciones-para-levantar-el-escenario" class="md-nav__link">
+    Instrucciones para levantar el escenario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -470,29 +470,37 @@
                   
 
 
-  <h1>Entorno XAMPP con Laravel</h1>
+  <h1>Servidor de aplicaciones Tomcat para la ejecución de aplicaciones Java</h1>
 
 <h2 id="instrucciones-para-levantar-el-escenario">Instrucciones para levantar el escenario</h2>
-<p>Este proyecto utiliza PHP 8.</p>
-<p>Para ilustrar este despliegue se utiliza una aplicación de muestra, obtenida de aquí: <a href="https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project">https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project</a></p>
-<p>Podría desplegarse la aplicación cuando se hiciese el <code>docker-compose up -d</code> pero lo he dejado como está para que pueda ser genérico y pueda desplegarse otra aplicación si se prefiere.</p>
-<p>Una vez los contenedores están corriendo habría que ir al contenedor del servidor web:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>apache-laravel
+<p>Este escenario es de los más sencillos. Hace uso de un servidor de aplicaciones Tomcat para ejecutar una aplicación Java, previamente compilada y empaquetada en un <strong>.war</strong></p>
+<p>Dependiendo de la versión de Java utilizada, se deberá utilziar una versión de Tomcat u otra. En este caso utilizaremos una versión un poco obsoleta ya que la aplicación de muestra está algo desfasada.</p>
+<p>En caso de desarrollos en Java 11 o superiores, podríamos utilizar ya a partir de la versión 10 de Tomcat. Algo más de detalle <a href="https://raul-profesor.github.io/Despliegue/P3.1-Tomcat/#por-que">aquí</a></p>
+<p>En cualquier caso, utilizaremos un único contenedor. Por este motivo nos basta con un <code>Dockerfile</code>y no necesitamos utilizar <code>docker compose</code>para tener un escenario multicontenedor.</p>
+<p>Sería tan simple como:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">tomcat:7.0</span><span class="w"> </span><span class="c"># (1)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">COPY</span><span class="w"> </span>./aplicacion/poc.war<span class="w"> </span>/usr/local/tomcat/webapps<span class="w"> </span>#<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
 </code></pre></div>
-<p>Instalar dependencias:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>composer<span class="w"> </span>install
+<ol>
+<li>Imagen con la versión de Tomcat indicada que se utilizará para crear el contenedor</li>
+<li>Al construir el contenedor, copia el fichero <strong>poc.war</strong> al directorio destinado a servir las aplicaciones en un servidor Tomcat</li>
+</ol>
+<p>Para construir y correr el contenedor, en el terminal y situados en el directorio del proyecto (donde está el <em>Dockerfile</em>) basta con hacer:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>docker<span class="w"> </span>image<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>raul/tomcat_poc<span class="w"> </span>.<span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">$ </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>--publish<span class="w"> </span><span class="m">8081</span>:8080<span class="w"> </span>raul/tomcat_poc<span class="w"> </span><span class="c1"># (2)</span>
 </code></pre></div>
-<p>Tras ello se debe crear la BBDD que está indicada en el archivo <code>.env</code> del proyecto de Laravel, en mi caso <em>miBBDD</em>. Esto se podria hacer desde el phpmyadmin que ya estaría corriendo en <strong>http://localhost:8001</strong> o bien mediante instrucciones por terminal desde el mismo contenedor del servidor web en el que estamos.</p>
-<p>Tras ello:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>php<span class="w"> </span>artisan<span class="w"> </span>migrate<span class="w"> </span>--seed
-</code></pre></div>
-<p>Y por último:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>php<span class="w"> </span>artisan<span class="w"> </span>key:generate
-</code></pre></div>
-<p>Ya sólo quedaría darle los permisos adecuados a la carpeta del servidor web para que podamos acceder:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:wwww-data<span class="w"> </span>/var/www/html
-</code></pre></div>
-<p>Y podremos acceder al blog (o aplicación desplegada) en <strong><em>http://localhost:8000</em></strong></p>
+<ol>
+<li>Construye la imagen del contenedor a partir del Dockerfile que se encuentra en el directorio actual (<code>.</code>) y como nombre ponle <code>raul/tomcat_poc</code></li>
+<li>Corre el contenedor mapeando el puerto 8080 de Tomcat en el contenedor, con el  puerto 8081 de la máquina donde esté corriendo el contenedors</li>
+</ol>
+<p>Una vez corriendo el contenedor, no nos queda más que acceder al servidor (localhost si es nuestra máquina, IP o nombre de dominio si es una remota):</p>
+<p><img alt="" src="../img/tomcat1.png" /></p>
+<p>Accedemos al puerto 8081 y al directorio <code>poc</code>que es como hemos llamado al .war de nuestra aplicación.</p>
+<p>Y corroboramos que todo funciona correctamente:</p>
+<p><img alt="" src="../img/tomcat2.png" /></p>
+<p><img alt="" src="../img/tomcat3.png" /></p>
 
 
   

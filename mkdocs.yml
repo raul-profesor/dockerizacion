@@ -29,6 +29,7 @@ theme:
     - toc.integrate
     - search.highlight
     - content.code.annotate
+    - content.code.copy
   icon:
     annotation: material/arrow-right-circle
 markdown_extensions:
