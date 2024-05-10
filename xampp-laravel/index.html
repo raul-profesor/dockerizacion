@@ -476,23 +476,37 @@
 <p>Este proyecto utiliza PHP 8.</p>
 <p>Para ilustrar este despliegue se utiliza una aplicación de muestra, obtenida de aquí: <a href="https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project">https://github.com/JeffreyWay/Laravel-From-Scratch-Blog-Project</a></p>
 <p>Podría desplegarse la aplicación cuando se hiciese el <code>docker-compose up -d</code> pero lo he dejado como está para que pueda ser genérico y pueda desplegarse otra aplicación si se prefiere.</p>
-<p>Una vez los contenedores están corriendo habría que ir al contenedor del servidor web:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>apache-laravel
+<p><img alt="" src="../img/laravel1.png" /></p>
+<p>Una vez los contenedores están corriendo habría que ir al terminal del contenedor del servidor web:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>apache-laravel
 </code></pre></div>
-<p>Instalar dependencias:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>composer<span class="w"> </span>install
+Y una vez dentro del contenedor, instalar dependencias:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp"># </span>composer<span class="w"> </span>install
 </code></pre></div>
-<p>Tras ello se debe crear la BBDD que está indicada en el archivo <code>.env</code> del proyecto de Laravel, en mi caso <em>miBBDD</em>. Esto se podria hacer desde el phpmyadmin que ya estaría corriendo en <strong>http://localhost:8001</strong> o bien mediante instrucciones por terminal desde el mismo contenedor del servidor web en el que estamos.</p>
-<p>Tras ello:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>php<span class="w"> </span>artisan<span class="w"> </span>migrate<span class="w"> </span>--seed
+<img alt="" src="../img/laravel2.png" />
+Tras ello se debe crear la BBDD que está indicada en el archivo <code>.env</code> del proyecto de Laravel, en mi caso <em>miBBDD</em>. Esto se podria hacer desde el phpmyadmin que ya estaría corriendo en <strong>http://localhost:8001</strong> o bien mediante instrucciones por terminal desde el mismo contenedor del servidor web en el que estamos.</p>
+<div class="admonition danger">
+<p class="admonition-title">¡Cuidado!</p>
+<p>No es lo mismo el archivo <em>.env</em> en la raíz del proyecto Docker que el <em>.env</em> en la carpeta de la aplicación PHP:</p>
+<ul>
+<li>El primero contiene variables de entorno para ser utilizadas en el <code>docker-compose.yml</code></li>
+<li>El segundo contiene variables que usará el código PHP de la aplicación</li>
+</ul>
+</div>
+<p>Tras ello, todavía dentro del contenedor:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp"># </span>php<span class="w"> </span>artisan<span class="w"> </span>migrate<span class="w"> </span>--seed
 </code></pre></div>
 <p>Y por último:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>php<span class="w"> </span>artisan<span class="w"> </span>key:generate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp"># </span>php<span class="w"> </span>artisan<span class="w"> </span>key:generate
 </code></pre></div>
+<p><img alt="" src="../img/laravel3.png" /></p>
+<p>Este proceso de creación y migración de base de datos sólo debe realizarse una primera vez puesto que hemos configurado un volumen para que todos los datos de MySQL se guarden en nuestro equipo de forma persistente. Esto quiere decir que aunque paremos o destruyamos el contenedor, al volver a crearlo tendremos exactamente los mismos datos.</p>
 <p>Ya sólo quedaría darle los permisos adecuados a la carpeta del servidor web para que podamos acceder:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:wwww-data<span class="w"> </span>/var/www/html
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp"># </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:wwww-data<span class="w"> </span>/var/www/html
 </code></pre></div>
-<p>Y podremos acceder al blog (o aplicación desplegada) en <strong><em>http://localhost:8000</em></strong></p>
+<p>Y podremos acceder al blog (o aplicación desplegada) en <strong><em>http://localhost:8000</em></strong> y a nuestro PHPMyadmin en <strong><em>http://localhost:8001</em></strong> (en mi caso estoy utilizando AWS, de ahí la URL):</p>
+<p><img alt="" src="../img/laravel4.png" /></p>
+<p><img alt="" src="../img/laravel5.png" /></p>
 
 
   
@@ -537,7 +551,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
